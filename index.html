@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goose Tales – Privacy Policy</title>
+<link rel="icon" href="icon.png">
+<style>
+  :root { --paper: #f7f0dc; --ink: #5a3e2b; --soft: #8a6d55; --card: #fffaf0; --line: #e6d9b8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink);
+         font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  header img { width: 64px; height: 64px; border-radius: 16px; }
+  h1 { font-size: 1.5em; margin: 0; line-height: 1.2; }
+  .by { color: var(--soft); font-size: .9em; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0; }
+  nav button { border: 1px solid var(--line); background: var(--card); color: var(--ink);
+               border-radius: 999px; padding: 4px 11px; font: inherit; font-size: .85em; cursor: pointer; }
+  nav button[aria-pressed="true"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 4px 22px 14px; }
+  h2 { font-size: 1.05em; margin: 20px 0 4px; }
+  p { margin: 0 0 8px; }
+  .date { color: var(--soft); font-size: .9em; margin-top: 14px; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="">
+    <div><h1 id="title"></h1><div class="by">MindBloom Studio</div></div>
+  </header>
+  <nav id="langs"></nav>
+  <section id="text"></section>
+</main>
+<script>
+const EMAIL = 'jimenaolmos@gmail.com';
+const T = {
+  en: { name: 'English', title: 'Goose Tales – Privacy Policy', date: 'Last updated: 14 November 2026', s: [
+    ['', 'Goose Tales is a board game for children, made by MindBloom Studio. This page explains what happens with your data when you play.'],
+    ['No data collected', 'Goose Tales does not collect, store or share any personal data. There are no accounts, no ads, no analytics, no tracking and no in-app purchases.'],
+    ['No internet', 'The app does not connect to the internet. Everything it needs is inside the app.'],
+    ['Saved on your device only', 'The game remembers a few things on your device: the chosen language, the sound, zoom and number settings, the unlocked stories, and the names players give their pieces. This never leaves your device and is deleted when you uninstall the app.'],
+    ['Children', 'Goose Tales is made for children. It does not collect any information from children or anyone else.'],
+    ['Changes', 'If this policy ever changes, we will update this page and its date.'],
+    ['Contact', 'Questions? Write to us at {EMAIL}.']] },
+  pt: { name: 'Português', title: 'Contos da Oca – Política de Privacidade', date: 'Última atualização: 14 de novembro de 2026', s: [
+    ['', 'Contos da Oca é um jogo de tabuleiro para crianças, feito pela MindBloom Studio. Esta página explica o que acontece com os seus dados quando você joga.'],
+    ['Nenhum dado coletado', 'Contos da Oca não coleta, armazena nem compartilha nenhum dado pessoal. Não há contas, anúncios, análises, rastreamento nem compras no aplicativo.'],
+    ['Sem internet', 'O aplicativo não se conecta à internet. Tudo o que ele precisa está dentro do aplicativo.'],
+    ['Salvo apenas no seu aparelho', 'O jogo guarda algumas coisas no seu aparelho: o idioma escolhido, as configurações de som, zoom e números, as histórias desbloqueadas e os nomes que os jogadores dão às suas peças. Isso nunca sai do seu aparelho e é apagado quando você desinstala o aplicativo.'],
+    ['Crianças', 'Contos da Oca foi feito para crianças. Ele não coleta nenhuma informação de crianças nem de ninguém.'],
+    ['Alterações', 'Se esta política mudar, atualizaremos esta página e a sua data.'],
+    ['Contato', 'Dúvidas? Escreva para {EMAIL}.']] },
+  es: { name: 'Español', title: 'Cuentos de la Oca – Política de privacidad', date: 'Última actualización: 14 de noviembre de 2026', s: [
+    ['', 'Cuentos de la Oca es un juego de mesa para niños, hecho por MindBloom Studio. Esta página explica qué pasa con tus datos cuando juegas.'],
+    ['No recogemos datos', 'Cuentos de la Oca no recoge, guarda ni comparte ningún dato personal. No hay cuentas, ni anuncios, ni analíticas, ni seguimiento, ni compras dentro de la aplicación.'],
+    ['Sin internet', 'La aplicación no se conecta a internet. Todo lo que necesita está dentro de la aplicación.'],
+    ['Guardado solo en tu dispositivo', 'El juego recuerda algunas cosas en tu dispositivo: el idioma elegido, los ajustes de sonido, zoom y números, los cuentos desbloqueados y los nombres que los jugadores dan a sus fichas. Esto nunca sale de tu dispositivo y se borra al desinstalar la aplicación.'],
+    ['Niños', 'Cuentos de la Oca está hecho para niños. No recoge ninguna información de los niños ni de nadie.'],
+    ['Cambios', 'Si esta política cambia, actualizaremos esta página y su fecha.'],
+    ['Contacto', '¿Preguntas? Escríbenos a {EMAIL}.']] },
+  it: { name: 'Italiano', title: "Racconti dell'Oca – Informativa sulla privacy", date: 'Ultimo aggiornamento: 14 novembre 2026', s: [
+    ['', "Racconti dell'Oca è un gioco da tavolo per bambini, creato da MindBloom Studio. Questa pagina spiega cosa succede ai tuoi dati quando giochi."],
+    ['Nessun dato raccolto', "Racconti dell'Oca non raccoglie, conserva né condivide alcun dato personale. Non ci sono account, pubblicità, statistiche, tracciamento né acquisti in-app."],
+    ['Niente internet', "L'app non si collega a internet. Tutto ciò che serve è già dentro l'app."],
+    ['Salvato solo sul tuo dispositivo', "Il gioco ricorda alcune cose sul tuo dispositivo: la lingua scelta, le impostazioni di suono, zoom e numeri, le storie sbloccate e i nomi che i giocatori danno alle loro pedine. Questi dati non lasciano mai il dispositivo e vengono cancellati quando disinstalli l'app."],
+    ['Bambini', "Racconti dell'Oca è pensato per i bambini. Non raccoglie alcuna informazione dai bambini né da nessun altro."],
+    ['Modifiche', 'Se questa informativa cambierà, aggiorneremo questa pagina e la sua data.'],
+    ['Contatti', 'Domande? Scrivici a {EMAIL}.']] },
+  fr: { name: 'Français', title: "Contes de l'Oie – Politique de confidentialité", date: 'Dernière mise à jour : 14 novembre 2026', s: [
+    ['', "Contes de l'Oie est un jeu de plateau pour enfants, créé par MindBloom Studio. Cette page explique ce qu'il advient de vos données lorsque vous jouez."],
+    ['Aucune donnée collectée', "Contes de l'Oie ne collecte, ne conserve et ne partage aucune donnée personnelle. Il n'y a ni compte, ni publicité, ni statistiques, ni suivi, ni achat intégré."],
+    ['Pas d’internet', "L'application ne se connecte pas à internet. Tout ce dont elle a besoin se trouve dans l'application."],
+    ['Enregistré uniquement sur votre appareil', "Le jeu retient quelques éléments sur votre appareil : la langue choisie, les réglages du son, du zoom et des numéros, les histoires débloquées et les noms que les joueurs donnent à leurs pions. Ces données ne quittent jamais votre appareil et sont effacées lorsque vous désinstallez l'application."],
+    ['Enfants', "Contes de l'Oie est conçu pour les enfants. Il ne collecte aucune information, ni sur les enfants ni sur personne d'autre."],
+    ['Modifications', 'Si cette politique change, nous mettrons à jour cette page et sa date.'],
+    ['Contact', 'Des questions ? Écrivez-nous à {EMAIL}.']] },
+  de: { name: 'Deutsch', title: 'Gänsegeschichten – Datenschutzerklärung', date: 'Zuletzt aktualisiert: 14. November 2026', s: [
+    ['', 'Gänsegeschichten ist ein Brettspiel für Kinder von MindBloom Studio. Diese Seite erklärt, was beim Spielen mit deinen Daten geschieht.'],
+    ['Keine Daten erhoben', 'Gänsegeschichten erhebt, speichert und teilt keine personenbezogenen Daten. Es gibt keine Konten, keine Werbung, keine Analyse, kein Tracking und keine In-App-Käufe.'],
+    ['Kein Internet', 'Die App verbindet sich nicht mit dem Internet. Alles, was sie braucht, ist in der App enthalten.'],
+    ['Nur auf deinem Gerät gespeichert', 'Das Spiel merkt sich einige Dinge auf deinem Gerät: die gewählte Sprache, die Einstellungen für Ton, Zoom und Zahlen, die freigeschalteten Geschichten und die Namen, die Spieler ihren Figuren geben. Diese Daten verlassen nie dein Gerät und werden beim Deinstallieren der App gelöscht.'],
+    ['Kinder', 'Gänsegeschichten ist für Kinder gemacht. Es erhebt keinerlei Informationen, weder von Kindern noch von anderen.'],
+    ['Änderungen', 'Falls sich diese Erklärung ändert, aktualisieren wir diese Seite und ihr Datum.'],
+    ['Kontakt', 'Fragen? Schreib uns an {EMAIL}.']] },
+  zh: { name: '中文', title: '小鹅讲故事 – 隐私政策', date: '最后更新：2026年11月14日', s: [
+    ['', '《小鹅讲故事》是由 MindBloom Studio 制作的儿童棋盘游戏。本页说明你在游戏时数据的处理方式。'],
+    ['不收集任何数据', '《小鹅讲故事》不收集、不存储、也不分享任何个人数据。没有账号、没有广告、没有分析、没有追踪，也没有应用内购买。'],
+    ['不联网', '本应用不连接互联网。它所需要的一切都在应用内。'],
+    ['只保存在你的设备上', '游戏会在你的设备上记住几样东西：所选的语言、声音、缩放和数字设置、已解锁的故事，以及玩家给棋子起的名字。这些内容绝不会离开你的设备，卸载应用时会被删除。'],
+    ['儿童', '《小鹅讲故事》是为儿童设计的。它不收集儿童或任何人的任何信息。'],
+    ['变更', '如果本政策有变动，我们会更新本页面及其日期。'],
+    ['联系我们', '有问题？请写信至 {EMAIL}。']] },
+  ja: { name: '日本語', title: 'ガチョウのおはなし – プライバシーポリシー', date: '最終更新日：2026年11月14日', s: [
+    ['', '「ガチョウのおはなし」は、MindBloom Studio が作った子ども向けのボードゲームです。このページでは、遊ぶときのデータの扱いについて説明します。'],
+    ['データを集めません', 'このゲームは個人データを一切収集・保存・共有しません。アカウント、広告、分析、トラッキング、アプリ内課金はありません。'],
+    ['インターネットを使いません', 'このアプリはインターネットに接続しません。必要なものはすべてアプリの中にあります。'],
+    ['端末の中だけに保存', 'ゲームは端末の中にいくつかの情報を記憶します：選んだ言語、音・ズーム・数字の設定、遊べるようになったおはなし、プレイヤーがコマにつけた名前。これらが端末の外に出ることはなく、アプリを削除すると消えます。'],
+    ['子どもについて', 'このゲームは子どものために作られています。子どもからも、ほかの誰からも、情報を集めることはありません。'],
+    ['変更について', 'このポリシーが変わる場合は、このページと日付を更新します。'],
+    ['お問い合わせ', 'ご質問は {EMAIL} までどうぞ。']] },
+  ko: { name: '한국어', title: '거위 이야기 – 개인정보 처리방침', date: '최종 업데이트: 2026년 11월 14일', s: [
+    ['', '거위 이야기는 MindBloom Studio가 만든 어린이용 보드게임입니다. 이 페이지는 게임을 할 때 데이터가 어떻게 처리되는지 설명합니다.'],
+    ['데이터를 수집하지 않습니다', '거위 이야기는 어떠한 개인 데이터도 수집, 저장, 공유하지 않습니다. 계정, 광고, 분석, 추적, 인앱 구매가 없습니다.'],
+    ['인터넷 없음', '이 앱은 인터넷에 연결하지 않습니다. 필요한 모든 것이 앱 안에 있습니다.'],
+    ['기기에만 저장', '게임은 기기에 몇 가지를 기억합니다: 선택한 언어, 소리·확대·숫자 설정, 열린 이야기, 그리고 플레이어가 말에 붙인 이름. 이 정보는 기기 밖으로 나가지 않으며 앱을 삭제하면 지워집니다.'],
+    ['어린이', '거위 이야기는 어린이를 위해 만들어졌습니다. 어린이를 포함해 누구의 정보도 수집하지 않습니다.'],
+    ['변경 사항', '이 방침이 바뀌면 이 페이지와 날짜를 업데이트하겠습니다.'],
+    ['문의', '궁금한 점이 있으면 {EMAIL} 로 연락해 주세요.']] },
+  ru: { name: 'Русский', title: 'Гусиные сказки – Политика конфиденциальности', date: 'Последнее обновление: 14 ноября 2026 г.', s: [
+    ['', '«Гусиные сказки» — настольная игра для детей от MindBloom Studio. На этой странице объясняется, что происходит с вашими данными во время игры.'],
+    ['Мы не собираем данные', '«Гусиные сказки» не собирают, не хранят и не передают никаких персональных данных. Нет аккаунтов, рекламы, аналитики, отслеживания и встроенных покупок.'],
+    ['Без интернета', 'Приложение не подключается к интернету. Всё необходимое находится внутри приложения.'],
+    ['Хранится только на вашем устройстве', 'Игра запоминает на вашем устройстве несколько вещей: выбранный язык, настройки звука, масштаба и чисел, открытые сказки и имена, которые игроки дают своим фишкам. Эти данные никогда не покидают устройство и удаляются вместе с приложением.'],
+    ['Дети', '«Гусиные сказки» созданы для детей. Игра не собирает никакой информации ни о детях, ни о ком-либо ещё.'],
+    ['Изменения', 'Если эта политика изменится, мы обновим эту страницу и её дату.'],
+    ['Контакты', 'Есть вопросы? Напишите нам: {EMAIL}.']] },
+  ar: { name: 'العربية', dir: 'rtl', title: 'حكايات الإوزة – سياسة الخصوصية', date: 'آخر تحديث: 14 نوفمبر 2026', s: [
+    ['', 'حكايات الإوزة لعبة لوحية للأطفال من صنع MindBloom Studio. تشرح هذه الصفحة ما يحدث لبياناتك عندما تلعب.'],
+    ['لا نجمع أي بيانات', 'لا تجمع حكايات الإوزة أي بيانات شخصية ولا تخزنها ولا تشاركها. لا توجد حسابات ولا إعلانات ولا تحليلات ولا تتبع ولا مشتريات داخل التطبيق.'],
+    ['بدون إنترنت', 'لا يتصل التطبيق بالإنترنت. كل ما يحتاجه موجود داخل التطبيق.'],
+    ['يُحفظ على جهازك فقط', 'تتذكر اللعبة بعض الأشياء على جهازك: اللغة المختارة، وإعدادات الصوت والتكبير والأرقام، والحكايات المفتوحة، والأسماء التي يعطيها اللاعبون لقطعهم. لا تغادر هذه المعلومات جهازك أبدًا، وتُحذف عند إلغاء تثبيت التطبيق.'],
+    ['الأطفال', 'صُنعت حكايات الإوزة للأطفال. لا تجمع أي معلومات من الأطفال أو من أي شخص آخر.'],
+    ['التغييرات', 'إذا تغيرت هذه السياسة، سنحدّث هذه الصفحة وتاريخها.'],
+    ['تواصل معنا', 'لديك أسئلة؟ راسلنا على {EMAIL}.']] },
+  hi: { name: 'हिन्दी', title: 'हंस की कहानियाँ – गोपनीयता नीति', date: 'अंतिम अपडेट: 14 नवंबर 2026', s: [
+    ['', 'हंस की कहानियाँ बच्चों के लिए एक बोर्ड गेम है, जिसे MindBloom Studio ने बनाया है। यह पेज बताता है कि खेलते समय आपके डेटा के साथ क्या होता है।'],
+    ['कोई डेटा इकट्ठा नहीं', 'हंस की कहानियाँ कोई भी निजी डेटा इकट्ठा, सेव या साझा नहीं करता। कोई अकाउंट, विज्ञापन, एनालिटिक्स, ट्रैकिंग या ऐप में खरीदारी नहीं है।'],
+    ['इंटरनेट नहीं', 'यह ऐप इंटरनेट से नहीं जुड़ता। इसे जो कुछ चाहिए, वह ऐप के अंदर ही है।'],
+    ['सिर्फ़ आपके डिवाइस पर सेव', 'गेम आपके डिवाइस पर कुछ चीज़ें याद रखता है: चुनी गई भाषा, आवाज़, ज़ूम और नंबर की सेटिंग, खुली हुई कहानियाँ, और खिलाड़ियों द्वारा अपनी गोटियों को दिए गए नाम। यह जानकारी कभी आपके डिवाइस से बाहर नहीं जाती और ऐप हटाने पर मिट जाती है।'],
+    ['बच्चे', 'हंस की कहानियाँ बच्चों के लिए बनाया गया है। यह बच्चों या किसी और से कोई जानकारी इकट्ठा नहीं करता।'],
+    ['बदलाव', 'अगर यह नीति बदलती है, तो हम इस पेज और इसकी तारीख को अपडेट करेंगे।'],
+    ['संपर्क', 'कोई सवाल? हमें {EMAIL} पर लिखें।']] },
+  nl: { name: 'Nederlands', title: 'Ganzenverhalen – Privacybeleid', date: 'Laatst bijgewerkt: 14 november 2026', s: [
+    ['', 'Ganzenverhalen is een bordspel voor kinderen, gemaakt door MindBloom Studio. Deze pagina legt uit wat er met je gegevens gebeurt als je speelt.'],
+    ['Geen gegevens verzameld', 'Ganzenverhalen verzamelt, bewaart en deelt geen persoonsgegevens. Er zijn geen accounts, geen advertenties, geen statistieken, geen tracking en geen in-app-aankopen.'],
+    ['Geen internet', 'De app maakt geen verbinding met internet. Alles wat hij nodig heeft, zit in de app.'],
+    ['Alleen op je apparaat bewaard', 'Het spel onthoudt een paar dingen op je apparaat: de gekozen taal, de instellingen voor geluid, zoom en nummers, de vrijgespeelde verhalen en de namen die spelers hun pionnen geven. Dit verlaat nooit je apparaat en wordt gewist als je de app verwijdert.'],
+    ['Kinderen', 'Ganzenverhalen is gemaakt voor kinderen. Het verzamelt geen informatie van kinderen of van wie dan ook.'],
+    ['Wijzigingen', 'Als dit beleid verandert, werken we deze pagina en de datum bij.'],
+    ['Contact', 'Vragen? Schrijf ons op {EMAIL}.']] },
+  pl: { name: 'Polski', title: 'Gęsie opowieści – Polityka prywatności', date: 'Ostatnia aktualizacja: 14 listopada 2026', s: [
+    ['', 'Gęsie opowieści to gra planszowa dla dzieci stworzona przez MindBloom Studio. Ta strona wyjaśnia, co dzieje się z Twoimi danymi podczas gry.'],
+    ['Nie zbieramy danych', 'Gęsie opowieści nie zbierają, nie przechowują ani nie udostępniają żadnych danych osobowych. Nie ma kont, reklam, analityki, śledzenia ani zakupów w aplikacji.'],
+    ['Bez internetu', 'Aplikacja nie łączy się z internetem. Wszystko, czego potrzebuje, jest w niej.'],
+    ['Zapisywane tylko na Twoim urządzeniu', 'Gra zapamiętuje na Twoim urządzeniu kilka rzeczy: wybrany język, ustawienia dźwięku, powiększenia i numerów, odblokowane opowieści oraz imiona, które gracze nadają swoim pionkom. Te dane nigdy nie opuszczają urządzenia i są usuwane po odinstalowaniu aplikacji.'],
+    ['Dzieci', 'Gęsie opowieści są stworzone dla dzieci. Gra nie zbiera żadnych informacji od dzieci ani od nikogo innego.'],
+    ['Zmiany', 'Jeśli ta polityka się zmieni, zaktualizujemy tę stronę i jej datę.'],
+    ['Kontakt', 'Pytania? Napisz do nas: {EMAIL}.']] },
+};
+
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const mail = `<a href="mailto:${EMAIL}">${EMAIL}</a>`;
+function show(code) {
+  const t = T[code] || T.en;
+  document.documentElement.lang = code;
+  document.documentElement.dir = t.dir || 'ltr';
+  document.title = t.title;
+  document.getElementById('title').textContent = t.title;
+  document.getElementById('text').innerHTML = t.s.map(([h, p]) =>
+    (h ? `<h2>${esc(h)}</h2>` : '<div style="height:16px"></div>') + `<p>${esc(p).replace('{EMAIL}', mail)}</p>`
+  ).join('') + `<p class="date">${esc(t.date)}</p>`;
+  document.querySelectorAll('nav button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === code));
+  history.replaceState(null, '', '#' + code);
+}
+const nav = document.getElementById('langs');
+for (const [code, t] of Object.entries(T)) {
+  const b = document.createElement('button');
+  b.dataset.l = code; b.textContent = t.name; b.onclick = () => show(code);
+  nav.appendChild(b);
+}
+const want = location.hash.slice(1) || (navigator.language || 'en').slice(0, 2).toLowerCase();
+show(T[want] ? want : 'en');
+</script>
+</body>
+</html>
